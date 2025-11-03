@@ -1,6 +1,6 @@
 {
   "name": "rastmobile-expo-dengage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dengage Expo Plugin - Rastmobile",
   "main": "./app.plugin.js",
   "files": [
