@@ -1,0 +1,70 @@
+{
+  "name": "rastmobile-expo-dengage",
+  "version": "1.0.0",
+  "description": "Dengage Expo Plugin - Rastmobile",
+  "main": "./app.plugin.js",
+  "files": [
+    "build/",
+    "app.plugin.js",
+    "ios/",
+    "android/src/",
+    "android/build.gradle",
+    "expo-module.config.json",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "clean": "expo-module clean",
+    "build": "rm -rf build && tsc && cp -a src/support/DengageNotificationServiceExtension build/support/ && cp -a src/support/DengageNotificationServiceExtension build/support/",
+    "lint": "eslint .",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "react-native",
+    "expo",
+    "rastmobile-dengage",
+    "RastmobileDengage"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rastmob/rastmobile-expo-dengage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rastmob/rastmobile-expo-dengage/issues"
+  },
+  "author": "Rastmobile",
+  "contributors": [
+    "Rastmobile Team"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rastmob/rastmobile-expo-dengage#readme",
+  "dependencies": {
+    "@expo/image-utils": "^0.3.23",
+    "@dengage-tech/react-native-dengage": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.8",
+    "@types/react": "^18.0.25",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "expo": "*",
+    "expo-module-scripts": "^3.0.11",
+    "expo-modules-core": "^1.5.11",
+    "react": "*",
+    "react-native": "*",
+    "readme-md-generator": "^1.0.0",
+    "typescript": "^5.2.2",
+    "@dengage-tech/react-native-dengage": "1.0.0"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-native": "*",
+    "@dengage-tech/react-native-dengage": "1.0.0"
+  },
+  "directories": {
+    "example": "example"
+  }
+}

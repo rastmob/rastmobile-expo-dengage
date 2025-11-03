@@ -1,0 +1,78 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+build/
+*.tsbuildinfo
+
+# Expo
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Android
+*.iml
+.gradle
+/android/build
+/android/local.properties
+/android/.gradle
+/android/captures/
+/android/.externalNativeBuild
+/android/.cxx
+/android/app/release
+
+# iOS
+/ios/build
+/ios/Pods
+/ios/.xcode.env.local
+
+# Testing
+coverage/
+.nyc_output/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Temp
+.tmp
+*.tmp
+
+# Package artifacts
+*.tgz
+package/
+
+# NPM
+.npmrc.local
+

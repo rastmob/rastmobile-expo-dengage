@@ -1,0 +1,22 @@
+export declare const IPHONEOS_DEPLOYMENT_TARGET = "13.4";
+export declare const TARGETED_DEVICE_FAMILY = "\"1,2\"";
+export declare const GROUP_IDENTIFIER_TEMPLATE_REGEX: RegExp;
+export declare const BUNDLE_SHORT_VERSION_TEMPLATE_REGEX: RegExp;
+export declare const BUNDLE_VERSION_TEMPLATE_REGEX: RegExp;
+export declare const DEFAULT_BUNDLE_VERSION = "1";
+export declare const DEFAULT_BUNDLE_SHORT_VERSION = "1.0";
+export declare const DNE_PODFILE_SNIPPET = "\ntarget 'DengageNotificationServiceExtension' do\n pod 'Dengage'\n  use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']\nend";
+export declare const DNE_PODFILE_REGEX: RegExp;
+export declare const DNE_TARGET_NAME = "DengageNotificationServiceExtension";
+export declare const DNE_SOURCE_FILE = "NotificationService.swift";
+export declare const DNE_EXT_FILES: string[];
+export declare const DCE_PODFILE_SNIPPET = "\ntarget 'DengageContentExtension' do\n pod 'Dengage'\n  use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']\nend";
+export declare const DCE_PODFILE_REGEX: RegExp;
+export declare const DCE_TARGET_NAME = "DengageContentExtension";
+export declare const DCE_SOURCE_FILE = "DengageNotificationViewController.m";
+export declare const DCEB_SOURCE_FILE = "CarouselNotificationCell.m";
+export declare const DCEC_SOURCE_FILE = "DengageRecievedMessage.m";
+export declare const DCED_SOURCE_FILE = "CarouselNotificationCell.xib";
+export declare const DCEE_SOURCE_FILE = "MainInterface.storyboard";
+export declare const DCE_EXT_FILES: string[];
+//# sourceMappingURL=iosConstants.d.ts.map

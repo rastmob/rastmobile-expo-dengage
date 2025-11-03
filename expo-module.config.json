@@ -1,0 +1,9 @@
+{
+  "platforms": ["ios", "android", "web"],
+  "ios": {
+    "modules": ["RastmobileDengageModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.rastmobiledengage.RastmobileDengageModule"]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "rastmobile-expo-dengage",
+    "slug": "rastmobile-expo-dengage",
+    "version": "1.0.0",
+    "description": "Expo plugin for Dengage - Rastmobile",
+    "platforms": [],
+    "android": {
+      "package": "com.rastmobile.expodengage"
+    },
+    "ios": {
+      "bundleIdentifier": "com.rastmobile.expodengage"
+    }
+  }
+}
