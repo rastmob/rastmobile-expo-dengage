@@ -1,38 +1,38 @@
 # Rastmobile Expo Dengage
 
-**Easy Dengage push notifications for Expo apps - no manual setup needed!**
+Dengage push notifications for Expo apps with automatic native configuration.
 
-## The Problem We Solved 😤
+## The Problem We Solved
 
-If you've tried using Dengage with Expo, you probably hit this wall:
+If you've tried using Dengage with Expo, you've probably run into this frustrating issue:
 
 ### What Usually Happens:
-1. You install Dengage's React Native package ✅
-2. You run `expo prebuild` ✅  
-3. Push notifications don't work 💥
-4. You realize you need to manually edit Android and iOS native files 😱
-5. You spend hours figuring out the right configurations 🕐
-6. Every time you run `expo prebuild --clean`, your changes disappear 💀
-7. You start questioning your life choices 🤦‍♂️
+1. You install Dengage's React Native package
+2. You run `expo prebuild`
+3. Push notifications don't work
+4. You realize you need to manually edit Android and iOS native files
+5. You spend hours figuring out the right configurations
+6. Every time you run `expo prebuild --clean`, your changes disappear
+7. You start wondering if there's a better way
 
 ### Why This Happens:
-- Dengage's package works great for **regular React Native** projects
-- But **Expo** generates Android/iOS folders automatically during `prebuild`
-- Dengage's native configurations don't get included automatically
-- You end up with broken push notifications and no clue why
+- Dengage's package works perfectly for regular React Native projects
+- But Expo generates Android/iOS folders automatically during prebuild
+- Dengage's native configurations don't get included in this process
+- You end up with broken push notifications and spend time debugging
 
-### Our Solution ✨
-**This package fixes everything automatically!**
+### Our Solution
+This package handles all the native configuration automatically.
 
-- ✅ **Works with Expo prebuild** - no manual editing needed
-- ✅ **Android setup** - handles all the Java/Kotlin configurations  
-- ✅ **iOS setup** - creates proper Swift AppDelegate and extensions
-- ✅ **Permission handling** - adds all required permissions automatically
-- ✅ **Production ready** - used in real apps serving thousands of users
+- Works seamlessly with Expo prebuild - no manual editing needed
+- Handles all Android Java/Kotlin configurations  
+- Creates proper iOS Swift AppDelegate and extensions
+- Adds all required permissions automatically
+- Production tested - used in real apps serving thousands of users
 
-**Just install, configure, and it works!** 🎉
+Just install, configure, and it works.
 
-## Quick Start 🚀
+## Installation
 
 ### 1. Add to your project
 
@@ -45,7 +45,7 @@ If you've tried using Dengage with Expo, you probably hit this wall:
 }
 ```
 
-### 2. Install
+### 2. Install dependencies
 
 ```bash
 npm install
@@ -95,11 +95,11 @@ export default {
 npx expo prebuild --clean
 ```
 
-**That's it!** 🎉 Your app now has working Dengage push notifications.
+That's it. Your app now has working Dengage push notifications.
 
 ## Development
 
-Want to modify this package? Here's how:
+To modify this package:
 
 ```bash
 cd packages/rastmobile-expo-dengage
@@ -107,150 +107,144 @@ npm install --legacy-peer-deps
 npm run build
 ```
 
-## What Happens Behind the Scenes 🔧
+## How It Works
 
 When you run `expo prebuild`, this package automatically:
 
-### Android Magic ✨
-- **Fixes your MainActivity** - Adds Dengage setup code in the right place
-- **Updates MainApplication** - Registers Dengage package properly  
-- **Configures AndroidManifest** - Adds all required permissions and receivers
-- **Handles Android 13+** - Adds notification permissions for newer Android versions
-- **Prevents crashes** - Uses safe timing to avoid initialization issues
+### Android Configuration
+- Modifies your MainActivity to add Dengage setup code in the right place
+- Updates MainApplication to register the Dengage package properly  
+- Configures AndroidManifest to add all required permissions and receivers
+- Handles Android 13+ notification permissions
+- Uses safe timing to avoid initialization issues
 
-### iOS Magic ✨  
-- **Creates AppDelegate.swift** - Builds a complete Swift AppDelegate (Expo SDK 53+ compatible)
-- **Sets up notification extensions** - Creates Content and Service extensions automatically
-- **Configures Xcode project** - Adds frameworks and build settings
-- **Handles permissions** - Sets up push notification entitlements
-- **Team ID integration** - Uses your Apple Developer Team for proper code signing
+### iOS Configuration  
+- Creates a complete Swift AppDelegate (compatible with Expo SDK 53+)
+- Sets up notification extensions (Content and Service extensions) automatically
+- Configures the Xcode project with proper frameworks and build settings
+- Sets up push notification entitlements
+- Integrates with your Apple Developer Team for proper code signing
 
-### Smart Features 🧠
-- **No duplicates** - Won't break if you run prebuild multiple times
-- **Error recovery** - Handles missing files gracefully  
-- **TypeScript ready** - Full type safety included
-- **Logging** - Helpful logs to debug issues
+### Key Features
+- Won't break if you run prebuild multiple times
+- Handles missing files gracefully  
+- Includes full TypeScript support
+- Provides helpful logging for debugging
 
 ## What This Package Does
 
-### The Simple Version
-Instead of manually editing native code after each `expo prebuild`, this package does it all automatically.
+Instead of manually editing native code after each `expo prebuild`, this package automates everything.
 
-### Automated Native Configuration
-This package works as an **Expo Config Plugin**. That means:
+This works as an Expo Config Plugin, which means:
 - It runs during `expo prebuild` 
-- It modifies native Android and iOS code based on your settings
+- It modifies native Android and iOS code based on your configuration
 - No manual editing required
-- Works with EAS Build and development builds
-- Supports both development and production
+- Compatible with EAS Build and development builds
+- Supports both development and production environments
 
 ## Technical Details
 
-### Advanced Android Features
-- **Nuclear option pattern** - Cleans up any existing Dengage code before adding new code (prevents duplicates)
-- **Kotlin support** - Uses modern Kotlin syntax
-- **SplashScreen compatibility** - Works with Expo's splash screen system
-- **Permission handling** - Adds `POST_NOTIFICATIONS` permission for Android 13+
-- **Safe initialization** - Uses delays and checks to prevent crashes
-- **Build safety** - You can run prebuild multiple times without breaking anything
+### Android Implementation
+- Uses a "nuclear option" pattern - cleans up any existing Dengage code before adding new code to prevent duplicates
+- Supports modern Kotlin syntax
+- Compatible with Expo's splash screen system
+- Automatically adds `POST_NOTIFICATIONS` permission for Android 13+
+- Uses delays and safety checks to prevent crashes during initialization
+- Designed to be run multiple times safely
 
-### Advanced iOS Features  
-- **Expo SDK 53+ ready** - Built for the latest Expo (AppDelegate is now Swift!)
-- **Complete file generation** - Creates the entire AppDelegate.swift from a template
-- **No patch scripts** - Pure TypeScript, no bash scripts needed
-- **WIS compatibility** - Works with react-native-wis if you use it
-- **Firebase integration** - Handles Firebase along with Dengage
-- **Universal links** - Supports deep linking and universal links
+### iOS Implementation  
+- Built specifically for Expo SDK 53+ (where AppDelegate is now Swift)
+- Generates the entire AppDelegate.swift file from a template
+- Pure TypeScript implementation - no bash scripts required
+- Compatible with react-native-wis if you're using it
+- Handles Firebase integration alongside Dengage
+- Supports deep linking and universal links
 
-### Developer-Friendly Features
-- **TypeScript** - Full type safety and IntelliSense support
-- **Error handling** - Clear error messages when something goes wrong
-- **Logging** - Helpful logs with `RastmobileDengageLog`
-- **Fallbacks** - Smart fallbacks when packages can't be found
+### Developer Experience
+- Full TypeScript support with proper type definitions
+- Clear error messages when something goes wrong
+- Comprehensive logging through `RastmobileDengageLog`
+- Smart fallbacks when packages can't be found automatically
 
-## Important Notes 📝
+## Important Notes
 
-### For Android Developers
-- This package completely rewrites parts of your MainActivity (that's the "nuclear option")
-- It automatically fixes duplicate import/code issues
-- `POST_NOTIFICATIONS` permission gets added automatically
-- For Android 13+, it uses a 500ms delay to prevent permission crashes
-- Everything is crash-safe and tested in production apps
+### Android Developers
+- This package rewrites parts of your MainActivity using the "nuclear option" approach
+- It automatically resolves duplicate import and code issues
+- The `POST_NOTIFICATIONS` permission is added automatically
+- For Android 13+, it uses a 500ms delay to prevent permission-related crashes
+- Everything has been tested in production environments
 
-### For iOS Developers  
-- **Only works with Expo SDK 53+** (AppDelegate is now Swift!)
-- Creates the entire AppDelegate.swift file from scratch
-- You **must** provide your Apple Developer Team ID
+### iOS Developers  
+- Only compatible with Expo SDK 53+ (AppDelegate is now Swift)
+- The entire AppDelegate.swift file is recreated from scratch
+- You must provide your Apple Developer Team ID in the configuration
 - Notification extensions are created automatically
-- Works with other notification libraries (like react-native-wis)
-- All services (Firebase, Dengage, etc.) are integrated properly
-- **No manual Xcode editing needed**
+- Compatible with other notification libraries like react-native-wis
+- All services (Firebase, Dengage, etc.) are properly integrated
+- No manual Xcode editing required
 
-## Troubleshooting 🆘
+## Troubleshooting
 
 ### Common Issues
 
-**Q: Push notifications not working after prebuild?**  
-A: Make sure you provided the correct Team ID in your config and that your Dengage keys are correct.
+**Push notifications not working after prebuild?**  
+Check that you provided the correct Team ID in your configuration and verify your Dengage API keys.
 
-**Q: Build failing on iOS?**  
-A: Check that your Apple Developer Team ID is correct in the plugin config.
+**iOS build failing?**  
+Verify that your Apple Developer Team ID is correct in the plugin configuration.
 
-**Q: Android permissions not working?**  
-A: This package automatically adds permissions. If it's not working, check your Dengage integration keys.
+**Android permissions not working?**  
+This package adds permissions automatically. If notifications still don't work, double-check your Dengage integration keys.
 
-**Q: Getting duplicate code errors?**  
-A: This package uses "nuclear option" pattern to prevent duplicates. If you still get errors, try `expo prebuild --clean`.
+**Getting duplicate code errors?**  
+This package uses a "nuclear option" pattern to prevent duplicates. If you're still getting errors, try running `expo prebuild --clean`.
 
-For more help, check our [GitHub Issues](https://github.com/rastmob/rastmobile-expo-dengage/issues).
+For additional help, check our [GitHub Issues](https://github.com/rastmob/rastmobile-expo-dengage/issues).
 
-## License
+## About Rast Mobile
 
-MIT - See [LICENSE](LICENSE) file for details.
+We're Rast Mobile, a mobile app development team based in Turkey. 
 
-## About Rast Mobile 🏢
+### Why We Built This
+We kept running into the same problem on different client projects: Dengage and Expo just didn't play nicely together. After manually fixing this integration for the fifth time, we decided to build a proper solution that handles everything automatically.
 
-Hi! We're **Rast Mobile** - a mobile app development team that loves solving tricky problems.
-
-### Why We Built This 💡
-We kept running into the same issue on client projects: Dengage + Expo just didn't work together nicely. After manually fixing this problem for the 5th time, we decided to build a proper solution that works automatically.
-
-**Result**: This package is now used in production apps serving thousands of users. It just works! ✨
+This package is now running in production apps that serve thousands of users daily.
 
 ### What We Do
-We're a mobile development company that specializes in:
-- **React Native & Expo apps** - especially the tricky integrations
-- **Push notifications** - we've probably integrated every push service that exists  
-- **Native modules** - when you need to connect JavaScript with native code
-- **Performance optimization** - making apps fast and smooth
-- **CI/CD pipelines** - automated testing and deployments
+We're a mobile development company that focuses on:
+- React Native and Expo applications, especially complex integrations
+- Push notification systems (we've integrated most of the major services)  
+- Native module development when you need to bridge JavaScript with native code
+- App performance optimization
+- CI/CD pipeline setup for mobile apps
 
-### Get In Touch 📞
-- **Website**: [rastmobile.com](https://rastmobile.com/en)
-- **Services**: [Mobile App Development](https://rastmobile.com/en/services/mobile-app)
-- **LinkedIn**: [Rast Mobile](https://www.linkedin.com/company/rastmobile/)
-- **Email**: contact@rastmobile.com
-- **Phone**: +90 212 945 47 44
+### Contact Information
+- Website: [rastmobile.com](https://rastmobile.com/en)
+- Mobile App Development: [rastmobile.com/en/services/mobile-app](https://rastmobile.com/en/services/mobile-app)
+- LinkedIn: [linkedin.com/company/rastmobile](https://www.linkedin.com/company/rastmobile/)
+- Email: contact@rastmobile.com
+- Phone: +90 212 945 47 44
 
-### Need Help? 🤝
-Struggling with a complex React Native or Expo integration? We've probably solved something similar before. Feel free to reach out for a consultation!
+### Need Help?
+If you're dealing with a complex React Native or Expo integration challenge, we've probably tackled something similar. Feel free to reach out for a consultation.
 
-**Our expertise includes:**
+We work on:
 - Cross-platform app development (React Native, Flutter, Expo)
 - Native iOS and Android development  
-- Complex third-party integrations (like this Dengage solution)
+- Third-party SDK integrations (like this Dengage solution)
 - Backend development and API integration
-- App store optimization and deployment
+- App store deployment and optimization
 - Code reviews and architecture consulting
 
-## More Info 📚
+## Additional Information
 
-- **GitHub**: [rastmob/rastmobile-expo-dengage](https://github.com/rastmob/rastmobile-expo-dengage)
-- **NPM**: [rastmobile-expo-dengage](https://www.npmjs.com/package/rastmobile-expo-dengage)
-- **Issues**: [GitHub Issues](https://github.com/rastmob/rastmobile-expo-dengage/issues)
-- **Changelog**: [CHANGELOG.md](CHANGELOG.md)
+- GitHub: [rastmob/rastmobile-expo-dengage](https://github.com/rastmob/rastmobile-expo-dengage)
+- NPM: [rastmobile-expo-dengage](https://www.npmjs.com/package/rastmobile-expo-dengage)
+- Issues: [GitHub Issues](https://github.com/rastmob/rastmobile-expo-dengage/issues)
+- Changelog: [CHANGELOG.md](CHANGELOG.md)
 
-## License 📄
+## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
@@ -258,4 +252,3 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 **Made with ❤️ by [Rast Mobile](https://rastmobile.com/en)**  
 *Solving mobile development challenges, one package at a time.*
-
