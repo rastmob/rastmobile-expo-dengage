@@ -10,13 +10,15 @@
     "android/src/",
     "android/build.gradle",
     "expo-module.config.json",
+    "src/support/DengageNotificationServiceExtension/",
+    "src/support/DengageContentExtension/",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
   ],
   "scripts": {
     "clean": "expo-module clean",
-    "build": "rm -rf build && tsc && cp -a src/support/DengageNotificationServiceExtension build/support/ && cp -a src/support/DengageNotificationServiceExtension build/support/",
+    "build": "rm -rf build && tsc && cp -a src/support/DengageNotificationServiceExtension build/support/ && cp -a src/support/DengageContentExtension build/support/",
     "lint": "eslint .",
     "prepare": "npm run build"
   },

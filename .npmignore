@@ -1,7 +1,5 @@
-# Source files (publish only build/)
-src/
-!src/support/DengageNotificationServiceExtension/
-!src/support/DengageContentExtension/
+# Source files (publish only build/ and src/support/)
+# Note: src/support/ klasörleri package.json files array'inde belirtildiği için gidecek
 
 # Node modules (automatically ignored by npm, but explicit is better)
 node_modules/
