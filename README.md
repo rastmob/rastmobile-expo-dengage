@@ -8,14 +8,6 @@ Bu paket projenizde yerel bir paket olarak kullanılabilir.
 
 ### 1. Ana Projenin package.json'ına ekleyin:
 
-```json
-{
-  "dependencies": {
-    "rastmobile-expo-dengage": "file:./packages/rastmobile-expo-dengage"
-  }
-}
-```
-
 ### 2. Bağımlılıkları kurun:
 
 ```bash
@@ -157,8 +149,6 @@ Bu paket, Expo SDK 53+ için özel olarak geliştirilmiştir:
 - **Patch script'e gerek yok**: Saf TypeScript, cross-platform
 
 Detaylı bilgi için:
-- [PUBLISH_GUIDE.md](PUBLISH_GUIDE.md) - Detaylı yayınlama rehberi
-- [QUICK_START.md](QUICK_START.md) - Hızlı başlangıç komutları
 - [CHANGELOG.md](CHANGELOG.md) - Versiyon geçmişi
 
 ## Lisans
